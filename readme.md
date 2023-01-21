@@ -15,6 +15,18 @@ https://mai.kosodante.com/usetailwindcsswithjavascript/
 
 
 
+TailwindCSSのパーツ集S  
+https://www.tailwind-kit.com/components/sidebar#
+
+
+【永久保存版】Tailwind CSS　チートシート 3.x対応  
+https://uedive.net/2021/5596/tailwind-css/
+
+
+
+
+
+
 
 詰んだ事例集
 
@@ -60,7 +72,7 @@ headerタグ内で以下の通りでoutput.cssを読み込んでいる。
 
 
 【結論】  
-解決  
+解決。  
 
 【参考にしたサイト等】
 https://de-milestones.com/tailwindcss-not-work-after-deploy/  
