@@ -49,7 +49,7 @@ https://uedive.net/2021/5596/tailwind-css/
 
 
 --------
-【詰んだこと】　　
+【詰んだこと】  
 TailwindCSSが効かない、フォントサイズや色が変わっていない  
 設定は下記動画通り実行した  
 https://www.youtube.com/watch?v=4wTVdlL_YGU
