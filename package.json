@@ -1,0 +1,16 @@
+{
+  "name": "10_php_homework01",
+  "version": "1.0.0",
+  "description": "Material Icons（Google Font Icons）の使い方を解説！   https://webdesign-trends.net/entry/14598",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
