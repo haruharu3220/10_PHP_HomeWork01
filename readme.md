@@ -59,8 +59,8 @@ https://www.youtube.com/watch?v=4wTVdlL_YGU
 
 1点目　　
 tailwind.config.jsでsrcフォルダ以下のファイルにTailwindCSSを適用する設定がされているようだ。　　
-→多分ここ[  content: ["./src/**/*.{html,js}"], ]　　
-そのため、ファイルをsrcフォルダに移動した。
+→多分ここ[  content: ["./src/**/*.{html,js}"], ]. 
+そのため、ファイルをsrcフォルダに移動した。  
 
 
 2点目  
@@ -74,7 +74,7 @@ headerタグ内で以下の通りでoutput.cssを読み込んでいる。
 【結論】  
 解決(2023/01/22)  
 
-【参考にしたサイト等】　　
+【参考にしたサイト等】　　  
 https://de-milestones.com/tailwindcss-not-work-after-deploy/  
 https://mai.kosodante.com/usetailwindcsswithjavascript/  
 --------
