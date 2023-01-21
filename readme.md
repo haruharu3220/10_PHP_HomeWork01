@@ -72,12 +72,30 @@ headerタグ内で以下の通りでoutput.cssを読み込んでいる。
 
 
 【結論】  
-解決。  
+解決(2023/01/22)  
 
 【参考にしたサイト等】
 https://de-milestones.com/tailwindcss-not-work-after-deploy/  
 https://mai.kosodante.com/usetailwindcsswithjavascript/  
 --------
+
+
+--------
+【詰んだこと】  
+チェックボックスのクリック後の色を青から別の色に変えたい  
+【解決策】  
+
+
+【結論】  
+未解決  
+
+【参考にしたサイト等】  
+
+
+--------
+
+
+
 
 
 TailwindCSSが適用されない
