@@ -8,7 +8,10 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    
     <script src="https://kit.fontawesome.com/092628cd4c.js" crossorigin="anonymous"></script>
+
 </head>
 
 
@@ -197,7 +200,7 @@
 <!-- サイドバー終了 -->
 
 <!-- Body開始 -->
-    <div class="bg-red-200 w-full"> 
+    <div class="main w-full"> 
         <div><h1>山本邸</h1></div>
         <div><h2>基本情報</h2></div>
         <div><h2>こだわり</h2></div>

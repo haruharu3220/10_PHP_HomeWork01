@@ -24,8 +24,8 @@ https://uedive.net/2021/5596/tailwind-css/
 
 
 
-
-
+日本の色<br>
+https://nipponcolors.com/#sensaicha<br>
 
 
 詰んだ事例集
@@ -101,3 +101,9 @@ https://proengineer.internous.co.jp/content/columnfeature/6499 <br>
 【入門】データベース設計まとめ<br>
 https://qiita.com/KNR109/items/5d4a1954f3e8fd8eaae7 <br>
 
+
+
+
+
+sangetu<br>
+https://www.sangetsu.co.jp/ <br>
