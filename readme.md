@@ -93,3 +93,8 @@ https://mai.kosodante.com/usetailwindcsswithjavascript/
 
 
 --------
+
+後で見る
+かけだしSEのためのデータベース設計入門
+https://proengineer.internous.co.jp/content/columnfeature/6499
+
