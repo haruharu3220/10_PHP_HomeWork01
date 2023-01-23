@@ -98,3 +98,6 @@ https://mai.kosodante.com/usetailwindcsswithjavascript/
 かけだしSEのためのデータベース設計入門<br>
 https://proengineer.internous.co.jp/content/columnfeature/6499 <br>
 
+【入門】データベース設計まとめ<br>
+https://qiita.com/KNR109/items/5d4a1954f3e8fd8eaae7 <br>
+
