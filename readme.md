@@ -1,95 +1,107 @@
-Material Icons（Google Font Icons）の使い方を解説！  
-https://webdesign-trends.net/entry/14598
+Material Icons（Google Font Icons）の使い方を解説！ <br> 
+https://webdesign-trends.net/entry/14598<br>
 
-Tailwindcss入門】利用者急上昇中のCSSフレームワークのTailwindcssで簡単なウェブサイトを作ってみよう  
-https://www.youtube.com/watch?v=4wTVdlL_YGU
-
-
-
-
-本番環境にデプロイしたらTailwind CSSが効かない時に確認すること
-https://de-milestones.com/tailwindcss-not-work-after-deploy/
-
-TailwindCSSが適用されないときに確認したこと
-https://mai.kosodante.com/usetailwindcsswithjavascript/
+Tailwindcss入門】利用者急上昇中のCSSフレームワークのTailwindcssで簡単なウェブサイトを作ってみよう  <br>
+https://www.youtube.com/watch?v=4wTVdlL_YGU<br>
 
 
 
-TailwindCSSのパーツ集S  
-https://www.tailwind-kit.com/components/sidebar#
+
+本番環境にデプロイしたらTailwind CSSが効かない時に確認すること<br>
+https://de-milestones.com/tailwindcss-not-work-after-deploy/<br>
+
+TailwindCSSが適用されないときに確認したこと<br>
+https://mai.kosodante.com/usetailwindcsswithjavascript/<br>
 
 
-【永久保存版】Tailwind CSS　チートシート 3.x対応  
-https://uedive.net/2021/5596/tailwind-css/
+
+TailwindCSSのパーツ集S  <br>
+https://www.tailwind-kit.com/components/sidebar#<br>
+
+<br>
+【永久保存版】Tailwind CSS　チートシート 3.x対応  <br>
+https://uedive.net/2021/5596/tailwind-css/<br>
+## データベース <br>
+データベースオブジェクトの命名規約<br>
+https://qiita.com/genzouw/items/35022fa96c120e67c637<br>
+中間テーブルとは<br>
+https://qiita.com/morikuma709/items/9fde633db9171b36a068<br>
+やさしい図解で学ぶ　中間テーブル　多対多　概念編<br>
+https://qiita.com/ramuneru/items/db43589551dd0c00fef9<br>
 
 
 
+## デザイン <br>
 日本の色<br>
 https://nipponcolors.com/#sensaicha<br>
+なぜエンジニアが作る画面はダサいのか…?<br>
+https://qiita.com/mskmiki/items/544149987475719e417b<br>
+【まとめ】エンジニア向けデザイン参考サイト<br>
+https://qiita.com/KNR109/items/78b3ca7cae7615dac0b0<br>
+プロダクトを死へと誘う複雑性の恐ろしさと、それを最適化する10個の方法<br>
+https://note.com/kajiken0630/n/nec15a5dd69d2<br>
+
+詰んだ事例集<br>
 
 
-詰んだ事例集
+--------<br>
+【詰んだこと】<br>  
+
+【解決策】<br>
 
 
---------
-【詰んだこと】  
+【結論】<br>
 
-【解決策】  
+【参考にしたサイト等】<br>
 
-
-【結論】  
-
-【参考にしたサイト等】  
-
-
---------
+--------<br>
 
 
 
-
-
---------
-【詰んだこと】  
-TailwindCSSが効かない、フォントサイズや色が変わっていない  
-設定は下記動画通り実行した  
-https://www.youtube.com/watch?v=4wTVdlL_YGU
-
-【解決策】
-二つある
-
-1点目　　
-tailwind.config.jsでsrcフォルダ以下のファイルにTailwindCSSを適用する設定がされているようだ。　　
-→多分ここ[  content: ["./src/**/*.{html,js}"], ]. 
-そのため、ファイルをsrcフォルダに移動した。  
-
-
-2点目  
-headerタグ内で以下の通りでoutput.cssを読み込んでいる。  
-<link href="/dist/output.css" rel="stylesheet">  
-これはtailwindCSSや上記で記載のYoutube動画と同じ記述であるが、  
-パスの指定が不適と考え下記のように修正。  
-<link href="../dist/output.css" rel="stylesheet">
-
-
-【結論】  
-解決(2023/01/22)  
-
-【参考にしたサイト等】　　  
-https://de-milestones.com/tailwindcss-not-work-after-deploy/  
-https://mai.kosodante.com/usetailwindcsswithjavascript/  
---------
 
 
 --------
-【詰んだこと】  
-チェックボックスのクリック後の色を青から別の色に変えたい  
-【解決策】  
+【詰んだこと】<br>
+TailwindCSSが効かない、フォントサイズや色が変わっていない<br>  
+設定は下記動画通り実行した<br>  
+https://www.youtube.com/watch?v=4wTVdlL_YGU<br>
+
+【解決策】<br>
+二つある<br>
+
+1点目<br>
+tailwind.config.jsでsrcフォルダ以下のファイルにTailwindCSSを適用する設定がされているようだ。<br>　　
+→多分ここ[  content: ["./src/**/*.{html,js}"], ]. <br>
+そのため、ファイルをsrcフォルダに移動した。<br>
 
 
-【結論】  
-未解決  
+2点目<br>
+headerタグ内で以下の通りでoutput.cssを読み込んでいる。<br>
+<link href="/dist/output.css" rel="stylesheet"><br>
+これはtailwindCSSや上記で記載のYoutube動画と同じ記述であるが、<br>
+パスの指定が不適と考え下記のように修正。<br>
+<link href="../dist/output.css" rel="stylesheet"><br>
 
-【参考にしたサイト等】  
+
+【結論】<br>
+解決(2023/01/22)<br>
+
+【参考にしたサイト等】<br>　  
+https://de-milestones.com/tailwindcss-not-work-after-deploy/<br>
+https://mai.kosodante.com/usetailwindcsswithjavascript/<br>
+--------
+
+
+--------
+【詰んだこと】<br>
+チェックボックスのクリック後の色を青から別の色に変えたい<br>
+【解決策】<br>
+
+
+【結論】<br>
+未解決<br>
+
+【参考にしたサイト等】<br>
 
 
 --------
