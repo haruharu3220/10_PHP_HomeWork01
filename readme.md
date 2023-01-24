@@ -1,6 +1,14 @@
+
+
 ### 目標
 https://gsacademy.jp/column/tky-019/<br>
 
+### 
+
+
+### 詳細
+詳細の管理はNotionで行う<br>
+https://dirt-thought-f41.notion.site/G-s-ACADEMY-8dfac03bc2e549d0b1b7a5015f9bf9c4<br>
 
 
 ### CSS
@@ -31,8 +39,13 @@ ER図とは？書き方やテクニックをわかりやすく解説<br>
 https://products.sint.co.jp/ober/blog/create-er-diagram<br>
 ER図（実体関連図）とは？<br>
 https://www.lucidchart.com/pages/ja/er-diagram<br>
-
+複合主キーの２番目のキーにAUTO_INCREMENTはできない<br>
+https://teratail.com/questions/21493<br>
 ### デザイン <br>
+Webサイトデザイン<br>
+https://partsdesign.net/<br>
+スマホデザイン<br>
+https://agtsmartphonedesign.com/page/2/<br>
 日本の色<br>
 https://nipponcolors.com/#sensaicha<br>
 なぜエンジニアが作る画面はダサいのか…?<br>
@@ -43,11 +56,12 @@ https://qiita.com/KNR109/items/78b3ca7cae7615dac0b0<br>
 https://note.com/kajiken0630/n/nec15a5dd69d2<br>
 Material Icons（Google Font Icons）の使い方を解説！ <br> 
 https://webdesign-trends.net/entry/14598<br>
-
-
-
-
-
+ログイン画面をモーダルで実装するのはやめよう<br>
+https://coliss.com/articles/build-websites/operation/work/dont-get-clever-with-login-forms.html<br>
+最高のログインフォームを考える<br>
+https://qiita.com/wakky_404/items/09507da58ec53f756b28<br>
+おしゃれデザインのログインフォーム！ コピペで差が付くデザインをCSSで<br>
+https://deshinon.com/2019/03/03/oshare-kopipe-login-css/<br>
 詰んだ事例集<br>
 
 
