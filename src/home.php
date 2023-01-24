@@ -105,7 +105,7 @@
         <div class="h-screen w-72">
             <nav class="mt-10 px-6 ">
                 
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="home.php">    
                 <i class="fa-solid fa-house "></i>
                     <span class="mx-4 text-lg font-normal">
                         Home
@@ -114,16 +114,25 @@
                     </span>
                 </a>
                 
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="schedule.php">    
                 <i class="fa-solid fa-table-list"></i>
                     <span class="mx-4 text-lg font-normal">
-                        Todo
+                    Schedule
+                    </span>
+                    <span class="flex-grow text-right">
+                    </span>
+                </a>
+
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="kanban.php">    
+                <i class="fa-solid fa-table-list"></i>
+                    <span class="mx-4 text-lg font-normal">
+                        Kanban
                     </span>
                     <span class="flex-grow text-right">
                     </span>
                 </a>
                 
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="garally.php">    
                 <i class="fa-regular fa-images"></i>
                     <span class="mx-4 text-lg font-normal">
                         Gallery
