@@ -23,21 +23,22 @@
                 <div class="flex">
                     <h1>HouseHouse</h1>
                 </div>
-                <div class="block">
-                    <div class="flex items-center ml-4 md:ml-6">
-                        <div class="relative ml-3">
-                            <div class="relative inline-block text-left">
-                                <div>
-                                    <button type="button" class="  flex items-center justify-center w-full rounded-md  px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500" id="options-menu">
-                                    <i class="fa-solid fa-arrow-right-to-bracket fa-2xl"></i>
-                                    </button>
+                <a href="login.php">
+                    <div class="block">
+                        <div class="flex items-center ml-4 md:ml-6">
+                            <div class="relative ml-3">
+                                <div class="relative inline-block text-left">
+                                    <div >
+                                        <button type="button" class="flex items-center justify-center w-full rounded-md  px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500" id="options-menu" >
+                                        <i class="fa-solid fa-arrow-right-to-bracket fa-2xl"></i>
+                                        </button>
+                                    </div>
+                            
                                 </div>
-                           
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </a>
             </div>
         </div>
     </nav>
