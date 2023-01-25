@@ -81,7 +81,7 @@ try{
 
 <!-- ナビバー　開始 -->
 <div>
-    <nav class=" dark:bg-gray-800  shadow ">
+    <nav class="navi_border dark:bg-gray-800 border-4 border-indigo-500/50">
         <div class="px-8 mx-auto max-w-7xl">
             <div class="flex items-center justify-between h-16">
                 <div class=" flex items-center">
@@ -202,8 +202,8 @@ try{
 
 
 <!-- サイドバー開始 -->
-<div class="relative dark:bg-gray-800 flex flex-row bg-green-200">
-    <div class="flex flex-col sm:flex-row sm:justify-around">
+<div class="relative dark:bg-gray-800 flex flex-row h-screen ">
+    <!-- <div class="flex flex-col sm:flex-row sm:justify-around">
         <div class="h-screen w-72">
             <nav class="mt-10 px-6 ">
                 
@@ -246,7 +246,7 @@ try{
                 
             </nav>
         </div>
-    </div>
+    </div> -->
     <!-- サイドバー終了 -->
 
     <!-- Dropdown menu -->

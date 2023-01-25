@@ -1,4 +1,17 @@
 .main{
-    background-color: #b7ccc9;
+    background-color: #f9fffc;
     /* background-color: red; */
+}
+
+.navi_border{
+    border-bottom: 3px solid #008b8b;
+}
+
+.kanban-drag{
+    background-color: #ffffff;
+    border: 5px solid #008b8b;
+}
+.kanban-item{
+    background-color: red;
+}
 }
