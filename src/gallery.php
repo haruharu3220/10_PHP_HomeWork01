@@ -17,9 +17,48 @@ try {
 }
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// echo ("<pre>");
-// var_dump($result);
-// echo ("</pre>");
+echo ("<pre>");
+var_dump($result);
+echo ("</pre>");
+
+
+
+
+//画像をアップロードする関数
+function fileSave($filename,$save_path,$caption)
+{
+
+    $pdo =connect_to_db();
+    $result = false;
+
+
+    $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
+            VALUE(:house_id, :image_id, :filename, :file_path, :category, now(), now(), NULL)";
+
+
+try{
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':house_id',$result[0]["house_id"],PDO::PARAM_STR);
+    $stmt->bindValue(':image_id',$save_path,PDO::PARAM_STR);
+    $stmt->bindValue(':filename',$filename,PDO::PARAM_STR);
+    $stmt->bindValue(':file_path',$save_path,PDO::PARAM_STR);
+    $stmt->bindValue(':category',$filename,PDO::PARAM_STR);
+    $result = $stmt->execute();
+
+    echo ("画像をDBに保存しました。");
+    return $result;
+}catch(\Exception $e){
+    exit($e->getMessage());
+    return $result;
+}
+
+
+
+}
+
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -240,7 +279,23 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div><h2>基本情報</h2></div>
         <div><h2>こだわり</h2></div>
         <div><h2>スケジュール</h2></div>
-
+    <form enctype="multipart/form-data" action="./gallery_upload.php" method="POST">
+      <div class="file-up">
+        <!-- UPする画像が1MB以上なら拒否する -->
+        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+        <input name="img" type="file" accept="image/*" />
+      </div>
+      <div>
+        <textarea
+          name="caption"
+          placeholder="キャプション（140文字以下）"
+          id="caption"
+        ></textarea>
+      </div>
+      <div class="submit">
+        <input type="submit" value="送信" class="btn" />
+      </div>
+    </form>
         
 
     </div>
