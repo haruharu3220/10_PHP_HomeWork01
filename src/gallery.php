@@ -80,7 +80,7 @@ try{
 
 <!-- ナビバー　開始 -->
 <div>
-    <nav class="bg-blue-200 dark:bg-gray-800  shadow ">
+    <nav class=" dark:bg-gray-800  shadow ">
         <div class="px-8 mx-auto max-w-7xl">
             <div class="flex items-center justify-between h-16">
                 <div class=" flex items-center">
@@ -89,6 +89,41 @@ try{
                 <div class="flex">
                     <h1>HouseHouse</h1>
                 </div>
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
+                    <i class="fa-solid fa-house "></i>
+                    <span class="mx-4 text-lg font-normal">
+                        Home
+                    </span>
+                    <span class="flex-grow text-right">
+                    </span>
+                </a>
+                
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
+                    <i class="fa-solid fa-table-list"></i>
+                    <span class="mx-4 text-lg font-normal">
+                    Schedule
+                    </span>
+                    <span class="flex-grow text-right">
+                    </span>
+                </a>
+
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
+                    <i class="fa-solid fa-table-list"></i>
+                    <span class="mx-4 text-lg font-normal">
+                        Kanban
+                    </span>
+                    <span class="flex-grow text-right">
+                    </span>
+                </a>
+                
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
+                    <i class="fa-regular fa-images"></i>
+                    <span class="mx-4 text-lg font-normal">
+                        Gallery
+                    </span>
+                    <span class="flex-grow text-right">
+                    </span>
+                </a>
                 <div class="block">
                     <div class="flex items-center ml-4 md:ml-6">
                         <div class="relative ml-3">
@@ -98,7 +133,7 @@ try{
                                         <i class="fa-solid fa-circle-user fa-2xl"></i>
                                     </button>
                                 </div>
-                                <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+                                <!-- <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
                                     <div class="py-1 " role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                                         <a href="#" class="block block px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
                                             <span class="flex flex-col">
@@ -122,19 +157,19 @@ try{
                                             </span>
                                         </a>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex -mr-2 md:hidden">
+                <!-- <div class="flex -mr-2 md:hidden">
                     <button class="text-gray-800 dark:text-white hover:text-gray-300 inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
                         <svg width="20" height="20" fill="currentColor" class="w-8 h-8" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z">
                             </path>
                         </svg>
                     </button>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -172,7 +207,7 @@ try{
             <nav class="mt-10 px-6 ">
                 
                 <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
-                <i class="fa-solid fa-house "></i>
+                    <i class="fa-solid fa-house "></i>
                     <span class="mx-4 text-lg font-normal">
                         Home
                     </span>
@@ -181,7 +216,7 @@ try{
                 </a>
                 
                 <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
-                <i class="fa-solid fa-table-list"></i>
+                    <i class="fa-solid fa-table-list"></i>
                     <span class="mx-4 text-lg font-normal">
                     Schedule
                     </span>
@@ -190,7 +225,7 @@ try{
                 </a>
 
                 <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
-                <i class="fa-solid fa-table-list"></i>
+                    <i class="fa-solid fa-table-list"></i>
                     <span class="mx-4 text-lg font-normal">
                         Kanban
                     </span>
@@ -199,7 +234,7 @@ try{
                 </a>
                 
                 <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">    
-                <i class="fa-regular fa-images"></i>
+                    <i class="fa-regular fa-images"></i>
                     <span class="mx-4 text-lg font-normal">
                         Gallery
                     </span>
@@ -275,28 +310,30 @@ try{
 
     <!-- Body開始 -->
     <div class="main w-full"> 
-        <div><h1>山本邸</h1></div>
-        <div><h2>基本情報</h2></div>
-        <div><h2>こだわり</h2></div>
-        <div><h2>スケジュール</h2></div>
     <form enctype="multipart/form-data" action="./gallery_upload.php" method="POST">
       <div class="file-up">
         <!-- UPする画像が1MB以上なら拒否する -->
         <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
         <input name="img" type="file" accept="image/*" />
       </div>
-      <div>
-        <textarea
-          name="caption"
-          placeholder="キャプション（140文字以下）"
-          id="caption"
-        ></textarea>
-      </div>
+        <select name="month">
+            <option value="jan">1月</option>
+            <option value="feb">2月</option>
+            <option value="mar">3月</option>
+            <option value="apr">4月</option>
+            <option value="may">5月</option>
+            <option value="jun">6月</option>
+            <option value="jul">7月</option>
+            <option value="aug">8月</option>
+            <option value="sep">9月</option>
+            <option value="oct">10月</option>
+            <option value="nov">11月</option>
+            <option value="dec">12月</option>
+        </select>
       <div class="submit">
         <input type="submit" value="送信" class="btn" />
       </div>
     </form>
-        
 
     </div>
     <!-- Body終了 -->
