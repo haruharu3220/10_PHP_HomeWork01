@@ -41,6 +41,12 @@ ER図（実体関連図）とは？<br>
 https://www.lucidchart.com/pages/ja/er-diagram<br>
 複合主キーの２番目のキーにAUTO_INCREMENTはできない<br>
 https://teratail.com/questions/21493<br>
+
+### SQL
+INSERT文（SQLを基本から学ぶシリーズ）<br>
+https://products.sint.co.jp/topsic/blog/sql-insert<br>
+日付型と時刻型(DATE, TIME, DATETIME, TIMESTAMP, YEAR)<br>
+https://www.javadrive.jp/mysql/type/index4.html<br>
 ### デザイン <br>
 Webサイトデザイン<br>
 https://partsdesign.net/<br>

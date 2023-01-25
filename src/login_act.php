@@ -32,15 +32,19 @@ if (!$user) {
   exit();
 } else {
   
-    echo '<pre>';
-    var_dump($user);
-    echo '</pre>';
-    $_SESSION['user_id'] = $user['id'];
-//   $_SESSION = array();
-//   $_SESSION['user_id'] = $user['id'];
-//   $_SESSION['session_id'] = session_id();
-//   $_SESSION['is_admin'] = $user['is_admin'];
-//   $_SESSION['username'] = $user['username'];
-//   header("Location:todo_read.php");
-//   exit();
+    // echo '<pre>';
+    // var_dump($user);
+    // echo '</pre>';
+
+    
+    $_SESSION['member_id'] = $user['id'];
+    $_SESSION['house_id'] = $user['house_id'];
+    $_SESSION['name'] = $user['name'];
+    $_SESSION['position'] = $user['position'];
+    $_SESSION['password'] = $user['password'];
+    $_SESSION['created_at'] = $user['created_at'];
+    $_SESSION['updated_at'] = $user['updated_at'];
+    
+    header("Location:home.php");
+    exit();
 }
