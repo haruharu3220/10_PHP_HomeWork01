@@ -47,6 +47,8 @@ INSERT文（SQLを基本から学ぶシリーズ）<br>
 https://products.sint.co.jp/topsic/blog/sql-insert<br>
 日付型と時刻型(DATE, TIME, DATETIME, TIMESTAMP, YEAR)<br>
 https://www.javadrive.jp/mysql/type/index4.html<br>
+【SQL入門】WHEREで検索条件の指定方法をわかりやすく解説<br>
+https://www.sejuku.net/blog/51583<br>
 ### デザイン <br>
 Webサイトデザイン<br>
 https://partsdesign.net/<br>

@@ -1,4 +1,25 @@
 <?php
+session_start();
+include("functions.php");
+check_session_id(); //自作の関数(session_idが合っているか確認)
+
+$pdo = connect_to_db();
+
+//menmersテーブルとhousesテーブルのJOIN
+$sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name ON members.house_id = houses_name.id2 WHERE id=1;";
+$stmt = $pdo->prepare($sql);
+
+try {
+  $status = $stmt->execute();
+} catch (PDOException $e) {
+  echo json_encode(["sql error" => "{$e->getMessage()}"]);
+  exit();
+}
+
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo ("<pre>");
+var_dump($result);
+echo ("</pre>");
 
 
 ?>
@@ -32,27 +53,37 @@
                         <div class="relative ml-3">
                             <div class="relative inline-block text-left">
                                 <div>
-                                    <button type="button" class="  flex items-center justify-center w-full rounded-md  px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500" id="options-menu">
+                                    <button type="button"
+                                        class="  flex items-center justify-center w-full rounded-md  px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500"
+                                        id="options-menu">
                                         <i class="fa-solid fa-circle-user fa-2xl"></i>
                                     </button>
                                 </div>
-                                <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
-                                    <div class="py-1 " role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                        <a href="#" class="block block px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
+                                <div
+                                    class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+                                    <div class="py-1 " role="menu" aria-orientation="vertical"
+                                        aria-labelledby="options-menu">
+                                        <a href="#"
+                                            class="block block px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600"
+                                            role="menuitem">
                                             <span class="flex flex-col">
                                                 <span>
                                                     Settings
                                                 </span>
                                             </span>
                                         </a>
-                                        <a href="#" class="block block px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
+                                        <a href="#"
+                                            class="block block px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600"
+                                            role="menuitem">
                                             <span class="flex flex-col">
                                                 <span>
                                                     Account
                                                 </span>
                                             </span>
                                         </a>
-                                        <a href="#" class="block block px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600" role="menuitem">
+                                        <a href="#"
+                                            class="block block px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white dark:hover:bg-gray-600"
+                                            role="menuitem">
                                             <span class="flex flex-col">
                                                 <span>
                                                     Logout
@@ -66,9 +97,12 @@
                     </div>
                 </div>
                 <div class="flex -mr-2 md:hidden">
-                    <button class="text-gray-800 dark:text-white hover:text-gray-300 inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
-                        <svg width="20" height="20" fill="currentColor" class="w-8 h-8" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z">
+                    <button
+                        class="text-gray-800 dark:text-white hover:text-gray-300 inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
+                        <svg width="20" height="20" fill="currentColor" class="w-8 h-8" viewBox="0 0 1792 1792"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1664 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm0-512v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z">
                             </path>
                         </svg>
                     </button>
@@ -108,36 +142,40 @@
     <div class="flex flex-col sm:flex-row sm:justify-around">
         <div class="h-screen w-72">
             <nav class="mt-10 px-6 ">
-                
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="home.php">    
-                <i class="fa-solid fa-house "></i>
+
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg "
+                    href="home.php">
+                    <i class="fa-solid fa-house "></i>
                     <span class="mx-4 text-lg font-normal">
                         Home
                     </span>
                     <span class="flex-grow text-right">
                     </span>
                 </a>
-                
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="schedule.php">    
-                <i class="fa-solid fa-table-list"></i>
+
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg "
+                    href="schedule.php">
+                    <i class="fa-solid fa-table-list"></i>
                     <span class="mx-4 text-lg font-normal">
-                    Schedule
+                        Schedule
                     </span>
                     <span class="flex-grow text-right">
                     </span>
                 </a>
 
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="kanban.php">    
-                <i class="fa-solid fa-table-list"></i>
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg "
+                    href="kanban.php">
+                    <i class="fa-solid fa-table-list"></i>
                     <span class="mx-4 text-lg font-normal">
                         Kanban
                     </span>
                     <span class="flex-grow text-right">
                     </span>
                 </a>
-                
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="garally.php">    
-                <i class="fa-regular fa-images"></i>
+
+                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg "
+                    href="garally.php">
+                    <i class="fa-regular fa-images"></i>
                     <span class="mx-4 text-lg font-normal">
                         Gallery
                     </span>
@@ -145,23 +183,27 @@
                     </span>
                 </a>
 
-                
+
             </nav>
         </div>
     </div>
-<!-- サイドバー終了 -->
+    <!-- サイドバー終了 -->
 
-<!-- Body開始 -->
-    <div class="bg-red-200 w-full"> 
-        <div><h1>山本邸</h1></div>
-        <div><h2>基本情報</h2></div>
-        <div><h2>こだわり</h2></div>
-        <div><h2>スケジュール</h2></div>
+    <!-- Body開始 -->
+    <div class="bg-red-200 w-full">
+        <div>
+            <h1><?=$result[0]["house_name"]?>邸</h1>
+        </div>
+        <div>
+            <h2>基本情報</h2>
+        </div>
+        <div>
+            <h2>完成予定日：<?=$result[0]["scheduled_completion_date"]?></h2>
+        </div>
 
-        
 
     </div>
-<!-- Body終了 -->
+    <!-- Body終了 -->
 
 </div>
 
