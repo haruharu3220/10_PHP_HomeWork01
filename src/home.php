@@ -208,6 +208,7 @@ $interval_format = $interval->format('%a日');
             <h2>完成まで、あと<?=$interval_format?></h2> 
         </div>
 
+        <a href="logout.php">logout</a>
 
     </div>
     <!-- Body終了 -->
