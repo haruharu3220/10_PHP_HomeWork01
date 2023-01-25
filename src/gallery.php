@@ -17,9 +17,9 @@ try {
 }
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo ("<pre>");
-var_dump($result);
-echo ("</pre>");
+// echo ("<pre>");
+// var_dump($result);
+// echo ("</pre>");
 
 
 
