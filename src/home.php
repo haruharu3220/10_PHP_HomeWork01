@@ -17,10 +17,16 @@ try {
 }
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo ("<pre>");
-var_dump($result);
-echo ("</pre>");
+// echo ("<pre>");
+// var_dump($result);
+// echo ("</pre>");
+$scheduled_day = new DateTime($result[0]["scheduled_completion_date"] );
+$scheduled_day_format = $scheduled_day->format('Y年m月d日');
 
+
+$today = new DateTime('now');
+$interval = $scheduled_day->diff($today);
+$interval_format = $interval->format('%a日');
 
 ?>
 <!DOCTYPE html>
@@ -198,7 +204,8 @@ echo ("</pre>");
             <h2>基本情報</h2>
         </div>
         <div>
-            <h2>完成予定日：<?=$result[0]["scheduled_completion_date"]?></h2>
+            <h2>完成予定日：<?=$scheduled_day_format?></h2>
+            <h2>完成まで、あと<?=$interval_format?></h2> 
         </div>
 
 
