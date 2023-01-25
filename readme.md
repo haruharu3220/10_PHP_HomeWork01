@@ -77,6 +77,35 @@ https://coliss.com/articles/build-websites/operation/work/dont-get-clever-with-l
 https://qiita.com/wakky_404/items/09507da58ec53f756b28<br>
 おしゃれデザインのログインフォーム！ コピペで差が付くデザインをCSSで<br>
 https://deshinon.com/2019/03/03/oshare-kopipe-login-css/<br>
+
+
+### カンバンボードの実装<br>
+【前編】JavaScriptでカンバン方式の「タスク管理アプリ」を作る！<br>
+https://www.youtube.com/watch?v=rJvznEGc5EY<br>
+jkanban GitHub<br>
+https://github.com/riktar/jkanban<br>
+jsDelivr<br>
+https://www.jsdelivr.com/<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 詰んだ事例集<br>
 
 

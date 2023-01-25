@@ -320,13 +320,28 @@ try{
         {id:'board-0',title:'未検討'},
         {id:'board-1',title:'検討中'},
         {id:'board-2',title:'確定'}
-
         ];
-
-            new jKanban({
+        let taskid =0;
+            const kanban =new jKanban({
                 element:'#kanban',
-                boards:data
+                boards:data,
+                itemAddOptions:{
+                    enabled: true,
+                    content: '追加'
+                },
+                buttonClick:(element,id) => addTask(id)
             });
+
+
+            function addTask(id){
+                const task = document.createElement('input');
+                kanban.addForm(id,task);
+                task.focus();
+                task.addEventListener('blur',e=>{
+                    kanban.addElement(id,{id:`item-${taskid++}`,title:e.target.value});
+                    task.remove();
+                })
+            }
         </script>
 
     </div>
