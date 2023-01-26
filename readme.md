@@ -34,6 +34,8 @@ https://www.youtube.com/watch?v=6JF0UAX7g-k<br>
 ### PHP
 【PHP入門】日付のフォーマット(format) | date・DateTimeなど<br>
 https://www.sejuku.net/blog/21625<br>
+PHP foreach構文 使い方【基本のキ】<br>
+https://tech-blog.rakus.co.jp/entry/20211001/php<br>
 
 ### データベース <br>
 データベースオブジェクトの命名規約<br>

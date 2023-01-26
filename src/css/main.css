@@ -55,7 +55,19 @@
     padding: 20px;
     opacity: 0;
     pointer-events: none;
-    
+}
 
-
+#menu-modal-container.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+#menu-modal-container{
+    position: absolute;
+    top:1000px;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
 }

@@ -156,7 +156,7 @@ echo ("</pre>");
                             <div class="relative inline-block text-left">
                                 <div>
                                     <button type="button" class="  flex items-center justify-center w-full rounded-md  px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-50 hover:bg-gray-50 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500" id="options-menu">
-                                        <i class="fa-solid fa-circle-user fa-2xl"></i>
+                                        <i class="fa-solid fa-circle-user fa-2xl" id="icon"></i>
                                     </button>
                                 </div>
                                 <!-- <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
@@ -385,10 +385,16 @@ echo ("</pre>");
             <input type="submit" value="送信" class="btn" />
         </div>
     </form>
-    Í
+    
     <div id="modal-close">閉じる</div>
     
 </div>
+
+<div id="menu-modal-container">
+    <p>颯斗</p>
+    <p>ログアウト</p>  
+</div>
+
 <?php foreach ($images as $image) { ?>
 <a href="gallery.php"><img src="../images/<?php echo $image['filename'];?>" alt="投稿画像"></a>
 <?php };?>
