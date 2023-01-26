@@ -28,15 +28,15 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$user) {
   echo "<p>ログイン情報に誤りがあります</p>";
-  echo "<a href=index.php>ログイン</a>";
+  echo "<a href=login.php>ログイン</a>";
   exit();
 } else {
   
     // echo '<pre>';
     // var_dump($user);
     // echo '</pre>';
-
-    
+    $_SESSION = array();
+    $_SESSION['session_id'] = session_id();
     $_SESSION['member_id'] = $user['id'];
     $_SESSION['house_id'] = $user['house_id'];
     $_SESSION['name'] = $user['name'];

@@ -1,7 +1,7 @@
 <?php
-session_start();
+// session_start();
 include("functions.php");
-check_session_id(); //自作の関数(session_idが合っているか確認)
+// check_session_id(); //自作の関数(session_idが合っているか確認)
 
 $pdo = connect_to_db();
 
