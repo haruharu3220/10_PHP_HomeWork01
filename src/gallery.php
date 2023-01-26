@@ -25,38 +25,40 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 //画像をアップロードする関数
-function fileSave($filename,$save_path,$caption)
-{
+// function fileSave($filename,$save_path,$caption)
+// {
 
-    $pdo =connect_to_db();
-    $result = false;
-
-
-    $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
-            VALUE(:house_id, :image_id, :filename, :file_path, :category, now(), now(), NULL)";
+//     $pdo =connect_to_db();
+//     $result = false;
 
 
-try{
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':house_id',$result[0]["house_id"],PDO::PARAM_STR);
-    $stmt->bindValue(':image_id',$save_path,PDO::PARAM_STR);
-    $stmt->bindValue(':filename',$filename,PDO::PARAM_STR);
-    $stmt->bindValue(':file_path',$save_path,PDO::PARAM_STR);
-    $stmt->bindValue(':category',$filename,PDO::PARAM_STR);
-    $result = $stmt->execute();
-
-    echo ("画像をDBに保存しました。");
-    return $result;
-}catch(\Exception $e){
-    exit($e->getMessage());
-    return $result;
-}
+//     $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
+//             VALUE(:house_id, :image_id, :filename, :file_path, :category, now(), now(), NULL)";
 
 
+//     try{
+//         $stmt = $pdo->prepare($sql);
+//         $stmt->bindValue(':house_id',$result[0]["house_id"],PDO::PARAM_STR);
+//         $stmt->bindValue(':image_id',$save_path,PDO::PARAM_STR);
+//         $stmt->bindValue(':filename',$filename,PDO::PARAM_STR);
+//         $stmt->bindValue(':file_path',$save_path,PDO::PARAM_STR);
+//         $stmt->bindValue(':category',$filename,PDO::PARAM_STR);
+//         $result = $stmt->execute();
 
-}
+//         echo ("画像をDBに保存しました。");
+//         return $result;
+//     } catch (\Exception $e) {
+//         exit($e->getMessage());
+//         return $result;
+//     }
+
+// }
 
 
+
+
+$targetDirectory = dirname(__FILE__).'/../images';
+var_dump($targetDirectory);
 
 
 
@@ -310,30 +312,30 @@ try{
 
     <!-- Body開始 -->
     <div class="main w-full"> 
-    <form enctype="multipart/form-data" action="./gallery_upload.php" method="POST">
-      <div class="file-up">
-        <!-- UPする画像が1MB以上なら拒否する -->
-        <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-        <input name="img" type="file" accept="image/*" />
-      </div>
-        <select name="month">
-            <option value="jan">1月</option>
-            <option value="feb">2月</option>
-            <option value="mar">3月</option>
-            <option value="apr">4月</option>
-            <option value="may">5月</option>
-            <option value="jun">6月</option>
-            <option value="jul">7月</option>
-            <option value="aug">8月</option>
-            <option value="sep">9月</option>
-            <option value="oct">10月</option>
-            <option value="nov">11月</option>
-            <option value="dec">12月</option>
-        </select>
-      <div class="submit">
-        <input type="submit" value="送信" class="btn" />
-      </div>
-    </form>
+        <form enctype="multipart/form-data" action="./gallery_upload.php" method="POST">
+        <div class="file-up">
+            <!-- UPする画像が1MB以上なら拒否する -->
+            <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+            <input name="img" type="file" accept="image/*" />
+        </div>
+            <select name="month">
+                <option value="jan">1月</option>
+                <option value="feb">2月</option>
+                <option value="mar">3月</option>
+                <option value="apr">4月</option>
+                <option value="may">5月</option>
+                <option value="jun">6月</option>
+                <option value="jul">7月</option>
+                <option value="aug">8月</option>
+                <option value="sep">9月</option>
+                <option value="oct">10月</option>
+                <option value="nov">11月</option>
+                <option value="dec">12月</option>
+            </select>
+        <div class="submit">
+            <input type="submit" value="送信" class="btn" />
+        </div>
+        </form>
 
     </div>
     <!-- Body終了 -->
