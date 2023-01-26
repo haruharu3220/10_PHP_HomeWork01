@@ -54,12 +54,12 @@
         <div><h2>こだわり</h2></div>
         <div><h2>スケジュール</h2></div>
 
-<div id="modal-open">詳しくはこちら</div>        
-<div id="modal-bg"></div>
-<div id="modal-container">
-    <p>ダミーダミーダミー</p>
-    <div id="modal-close">閉じる</div>
-</div>
+        <div id="modal-open">詳しくはこちら</div>        
+        <div id="modal-bg"></div>
+        <div id="modal-container">
+            <p>ダミーダミーダミー</p>
+            <div id="modal-close">閉じる</div>
+        </div>
 
     </div>
 <!-- Body終了 -->
