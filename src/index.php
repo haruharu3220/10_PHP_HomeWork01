@@ -8,6 +8,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/092628cd4c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -47,11 +48,19 @@
 
 
 <!-- Body開始 -->
-    <div class="bg-red-200 w-full h-1/2 md:h-screen"> 
+    <div class=" w-full h-1/2 md:h-screen"> 
         <div><h1>山本邸</h1></div>
         <div><h2>基本情報</h2></div>
         <div><h2>こだわり</h2></div>
         <div><h2>スケジュール</h2></div>
+
+<div id="modal-open">詳しくはこちら</div>        
+<div id="modal-bg"></div>
+<div id="modal-container">
+    <p>ダミーダミーダミー</p>
+    <div id="modal-close">閉じる</div>
+</div>
+
     </div>
 <!-- Body終了 -->
 
@@ -59,5 +68,7 @@
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/modal.js"></script>
 
 </html>

@@ -28,7 +28,9 @@ https://uedive.net/2021/5596/tailwind-css/<br>
 Tailwindcss入門】利用者急上昇中のCSSフレームワークのTailwindcssで簡単なウェブサイトを作ってみよう  <br>
 https://www.youtube.com/watch?v=4wTVdlL_YGU<br>
 
-
+### javaScript
+【javascript実践編#5】モーダルウィンドウを作ってみよう<br>
+https://www.youtube.com/watch?v=6JF0UAX7g-k<br>
 ### PHP
 【PHP入門】日付のフォーマット(format) | date・DateTimeなど<br>
 https://www.sejuku.net/blog/21625<br>
