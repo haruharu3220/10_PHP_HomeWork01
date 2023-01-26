@@ -2,8 +2,46 @@
 session_start();
 include("functions.php");
 check_session_id(); //自作の関数(session_idが合っているか確認)
-
 $pdo = connect_to_db();
+
+// echo ("<pre>");
+// var_dump($_FILES);
+// echo ("</pre>");
+
+//画像が送信されたら
+if (isset($_FILES) && !empty($_FILES)) {
+    //ファイル関連の取得
+    $file = $_FILES['img'];
+    $filename = basename($file['name']);
+    $tmp_path = $file['tmp_name'];
+    $file_err = $file['error'];
+    $filesize = $file['size'];
+    $upload_dir = dirname(__FILE__, 2) . '/images/';
+    // var_dump($upload_dir);
+
+    $save_filename = date('YmdHis') . $filename;
+    $err_msgs = array();
+    $save_path = $upload_dir . $save_filename; 
+
+
+
+    if (is_uploaded_file($tmp_path)) {
+        
+        if (move_uploaded_file($tmp_path, $save_path)) {
+            echo $filename . 'を' . $upload_dir . 'にアップしました。';
+            //DBに保存(ファイル名、ファイルが存在するファイルパス、キャプション)
+            $result = fileSave($filename, $save_path, $caption);
+        } else {
+            echo '<br>$tmp_path＝'.$tmp_path . 'を<br>' .'$save_path='. $save_path . 'ファイルの移動に失敗しました。';
+        }
+    } else {
+        echo 'ファイルが選択されていません。';
+        echo '<br>';
+    }
+
+}
+
+
 
 //menmersテーブルとhousesテーブルのJOIN
 $sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name ON members.house_id = houses_name.id2 WHERE id=1;";
@@ -364,7 +402,20 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <div id="modal-bg"></div>
 <div id="modal-container">
-    <p>ダミーダミーダミー</p>
+    <form enctype="multipart/form-data" action="./gallery.php" method="POST">
+        <div class="file-up">
+            <!-- UPする画像が1MB以上なら拒否する -->
+            <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+            <input name="img" type="file" accept="image/*" />
+        </div>
+        <div>
+            <textarea name="caption" placeholder="キャプション（140文字以下）" id="caption"></textarea>
+        </div>
+        <div class="submit">
+            <input type="submit" value="送信" class="btn" />
+        </div>
+    </form>
+    Í
     <div id="modal-close">閉じる</div>
 </div>
 
