@@ -6,20 +6,20 @@ check_session_id(); //自作の関数(session_idが合っているか確認)
 $pdo = connect_to_db();
 
 //menmersテーブルとhousesテーブルのJOIN
-$sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name ON members.house_id = houses_name.id2 WHERE id=1;";
-$stmt = $pdo->prepare($sql);
+// $sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name ON members.house_id = houses_name.id2 WHERE id=1;";
+// $stmt = $pdo->prepare($sql);
 
-try {
-  $status = $stmt->execute();
-} catch (PDOException $e) {
-  echo json_encode(["sql error" => "{$e->getMessage()}"]);
-  exit();
-}
+// try {
+//   $status = $stmt->execute();
+// } catch (PDOException $e) {
+//   echo json_encode(["sql error" => "{$e->getMessage()}"]);
+//   exit();
+// }
 
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// echo ("<pre>");
-// var_dump($result);
-// echo ("</pre>");
+// $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$result = getHouseInfo();
+
 $scheduled_day = new DateTime($result[0]["scheduled_completion_date"] );
 $scheduled_day_format = $scheduled_day->format('Y年m月d日');
 

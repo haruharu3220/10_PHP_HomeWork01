@@ -23,43 +23,6 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-
-//画像をアップロードする関数
-function fileSave($filename,$save_path,$caption)
-{
-
-    $pdo =connect_to_db();
-    $result = false;
-
-
-    $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
-            VALUE(:house_id, :image_id, :filename, :file_path, :category, now(), now(), NULL)";
-
-
-try{
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':house_id',$result[0]["house_id"],PDO::PARAM_STR);
-    $stmt->bindValue(':image_id',$save_path,PDO::PARAM_STR);
-    $stmt->bindValue(':filename',$filename,PDO::PARAM_STR);
-    $stmt->bindValue(':file_path',$save_path,PDO::PARAM_STR);
-    $stmt->bindValue(':category',$filename,PDO::PARAM_STR);
-    $result = $stmt->execute();
-
-    echo ("画像をDBに保存しました。");
-    return $result;
-}catch(\Exception $e){
-    exit($e->getMessage());
-    return $result;
-}
-
-
-
-}
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
