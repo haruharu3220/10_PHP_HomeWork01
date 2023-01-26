@@ -13,6 +13,7 @@ if (isset($_FILES) && !empty($_FILES)) {
     //ファイル関連の取得
     $file = $_FILES['img'];
     $filename = basename($file['name']);
+    var_dump($filename);
     $tmp_path = $file['tmp_name'];
     $file_err = $file['error'];
     $filesize = $file['size'];
@@ -30,7 +31,7 @@ if (isset($_FILES) && !empty($_FILES)) {
         if (move_uploaded_file($tmp_path, $save_path)) {
             echo $filename . 'を' . $upload_dir . 'にアップしました。';
             //DBに保存(ファイル名、ファイルが存在するファイルパス、キャプション)
-            $result = fileSave($filename, $save_path, $caption);
+            $result = fileSave($filename, $save_path, 1);
         } else {
             echo '<br>$tmp_path＝'.$tmp_path . 'を<br>' .'$save_path='. $save_path . 'ファイルの移動に失敗しました。';
         }

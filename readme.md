@@ -58,6 +58,8 @@ https://www.javadrive.jp/mysql/type/index4.html<br>
 https://www.sejuku.net/blog/51583<br>
 SQL JOINの結合条件とWHEREの条件の違いと使い分け<br>
 https://zukucode.com/2017/08/sql-join-where.html<br>
+「Duplicate entry ‘1’ for key ‘PRIMARY’」と表示されるとき<br>
+https://php1st.com/1470<br>
 ### Git
 アップロードした画像ファイルをgitの管理対象から外す<br>
 https://qiita.com/Tsh-43879562/items/1a23034bfeb44eb21f24<br>
