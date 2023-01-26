@@ -54,30 +54,50 @@ function getHouseInfo(){
  * @param mixed $caption
  * @return bool
  */
-function fileSave($filename,$save_path,$caption)
+function fileSave($filename, $save_path, $caption)
 {
 
-    $pdo =connect_to_db();
-    $result = getHouseInfo();
+  $pdo = connect_to_db();
+  $result = getHouseInfo();
 
-    $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
+  $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
             VALUE(:house_id, :image_id, :filename, :file_path, :category_id, now(), now(), NULL)";
 
 
-  try{
-      $stmt = $pdo->prepare($sql);
-      $stmt->bindValue(':house_id',$result[0]["house_id"],PDO::PARAM_STR);
-      $stmt->bindValue(':image_id',2,PDO::PARAM_STR);
-      $stmt->bindValue(':filename',$filename,PDO::PARAM_STR);
-      $stmt->bindValue(':file_path',$save_path,PDO::PARAM_STR);
-      $stmt->bindValue(':category_id',1,PDO::PARAM_STR);
-      $result = $stmt->execute();
+  try {
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':house_id', $result[0]["house_id"], PDO::PARAM_STR);
+    $stmt->bindValue(':image_id', 1, PDO::PARAM_STR);
+    $stmt->bindValue(':filename', $filename, PDO::PARAM_STR);
+    $stmt->bindValue(':file_path', $save_path, PDO::PARAM_STR);
+    $stmt->bindValue(':category_id', 1, PDO::PARAM_STR);
+    $result = $stmt->execute();
 
-      echo ("画像をDBに保存しました。");
-      return $result;
-  }catch(\Exception $e){
-      exit($e->getMessage());
-      return $result;
+    echo ("画像をDBに保存しました。");
+    return $result;
+  } catch (\Exception $e) {
+    exit($e->getMessage());
+    return $result;
   }
-
 }
+
+  function aaa(){
+
+    $pdo =connect_to_db();
+
+    $sql = "SELECT * FROM images ORDER BY updated_at DESC";
+    
+
+    try{
+        $stmt = $pdo->prepare($sql);
+        $result = $stmt->execute();
+
+    }catch(\Exception $e){
+        exit($e->getMessage());
+        exit();
+    }
+    $images_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    
+    return $images_info;
+  }
