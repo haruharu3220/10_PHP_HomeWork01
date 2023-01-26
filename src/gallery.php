@@ -13,7 +13,6 @@ if (isset($_FILES) && !empty($_FILES)) {
     //ファイル関連の取得
     $file = $_FILES['img'];
     $filename = basename($file['name']);
-    var_dump($filename);
     $tmp_path = $file['tmp_name'];
     $file_err = $file['error'];
     $filesize = $file['size'];
@@ -21,6 +20,8 @@ if (isset($_FILES) && !empty($_FILES)) {
     // var_dump($upload_dir);
 
     $save_filename = date('YmdHis') . $filename;
+    // var_dump($save_filename );
+    
     $err_msgs = array();
     $save_path = $upload_dir . $save_filename; 
 
@@ -29,9 +30,9 @@ if (isset($_FILES) && !empty($_FILES)) {
     if (is_uploaded_file($tmp_path)) {
         
         if (move_uploaded_file($tmp_path, $save_path)) {
-            echo $filename . 'を' . $upload_dir . 'にアップしました。';
+            echo $save_filename . 'を' . $upload_dir . 'にアップしました。';
             //DBに保存(ファイル名、ファイルが存在するファイルパス、キャプション)
-            $result = fileSave($filename, $save_path, 1);
+            $result = fileSave($save_filename, $save_path, 1);
         } else {
             echo '<br>$tmp_path＝'.$tmp_path . 'を<br>' .'$save_path='. $save_path . 'ファイルの移動に失敗しました。';
         }
@@ -56,46 +57,14 @@ try {
 }
 
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-// echo ("<pre>");
-// var_dump($result);
-// echo ("</pre>");
 
 
+$images = aaa();
+echo ("<pre>");
+// var_dump($image);
+var_dump($images[0]['filename']);
 
-
-//画像をアップロードする関数
-// function fileSave($filename,$save_path,$caption)
-// {
-
-//     $pdo =connect_to_db();
-//     $result = false;
-
-
-//     $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
-//             VALUE(:house_id, :image_id, :filename, :file_path, :category, now(), now(), NULL)";
-
-
-//     try{
-//         $stmt = $pdo->prepare($sql);
-//         $stmt->bindValue(':house_id',$result[0]["house_id"],PDO::PARAM_STR);
-//         $stmt->bindValue(':image_id',$save_path,PDO::PARAM_STR);
-//         $stmt->bindValue(':filename',$filename,PDO::PARAM_STR);
-//         $stmt->bindValue(':file_path',$save_path,PDO::PARAM_STR);
-//         $stmt->bindValue(':category',$filename,PDO::PARAM_STR);
-//         $result = $stmt->execute();
-
-//         echo ("画像をDBに保存しました。");
-//         return $result;
-//     } catch (\Exception $e) {
-//         exit($e->getMessage());
-//         return $result;
-//     }
-
-// }
-
-
-
-
+echo ("</pre>");
 // $targetDirectory = dirname(__FILE__,2).'/images';
 // var_dump($targetDirectory);
 // $fileName = basename($_FILES["file"]["name"]);
@@ -258,7 +227,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 <!-- サイドバー開始 -->
-<div class="relative dark:bg-gray-800 flex flex-row bg-green-200">
+<div class="relative dark:bg-gray-800 flex flex-row">
     <div class="flex flex-col sm:flex-row sm:justify-around">
         <div class="h-screen w-72">
             <nav class="mt-10 px-6 ">
@@ -418,7 +387,11 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </form>
     Í
     <div id="modal-close">閉じる</div>
+    
 </div>
+<?php foreach ($images as $image) { ?>
+<a href="gallery.php"><img src="../images/<?php echo $image['filename'];?>" alt="投稿画像"></a>
+<?php };?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/modal.js"></script>
