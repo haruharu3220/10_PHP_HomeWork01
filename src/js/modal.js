@@ -20,9 +20,12 @@
         container.classList.remove('active');
         modalBg.classList.remove('active');
     });
+
     modalBg.addEventListener('click',()=>{
         container.classList.remove('active');
+        menu.classList.remove('active');
         modalBg.classList.remove('active');
+        
     });
 
 
@@ -32,5 +35,10 @@
         modalBg.classList.add('active');
     });
 
+
+
+    $('.logout').on('click', function() {
+        alert("ログアウトしますか");
+      });
 
 }

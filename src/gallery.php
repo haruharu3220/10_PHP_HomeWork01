@@ -392,7 +392,7 @@ echo ("</pre>");
 
 <div id="menu-modal-container">
     <p>颯斗</p>
-    <p>ログアウト</p>  
+    <p class="logout">ログアウト</p>  
 </div>
 
 <?php foreach ($images as $image) { ?>
