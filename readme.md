@@ -27,6 +27,8 @@ https://www.tailwind-kit.com/components/sidebar#<br>
 https://uedive.net/2021/5596/tailwind-css/<br>
 Tailwindcss入門】利用者急上昇中のCSSフレームワークのTailwindcssで簡単なウェブサイトを作ってみよう  <br>
 https://www.youtube.com/watch?v=4wTVdlL_YGU<br>
+【Tailwind和訳】INTERACTIVITY/Cursor<br>
+https://zenn.dev/unreact/articles/tailwindcss-interactivity-cursor<br>
 
 ### javaScript
 【javascript実践編#5】モーダルウィンドウを作ってみよう<br>
@@ -86,6 +88,10 @@ https://coliss.com/articles/build-websites/operation/work/dont-get-clever-with-l
 https://qiita.com/wakky_404/items/09507da58ec53f756b28<br>
 おしゃれデザインのログインフォーム！ コピペで差が付くデザインをCSSで<br>
 https://deshinon.com/2019/03/03/oshare-kopipe-login-css/<br>
+
+### 便利
+CSSジェネレーターWebサービス<br>
+https://omkz.net/css-generators/
 
 
 ### カンバンボードの実装<br>
