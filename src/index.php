@@ -9,13 +9,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/navigation.css">
     <script src="https://kit.fontawesome.com/092628cd4c.js" crossorigin="anonymous"></script>
 </head>
 
 
 <!-- ナビバー　開始 -->
-<div>
-    <nav class="bg-blue-200 dark:bg-gray-800  shadow ">
+<div class="navigation">
+    <nav >
         <div class="px-8 mx-auto max-w-7xl">
             <div class="flex items-center justify-between h-16">
                 <div class=" flex items-center">
