@@ -51,10 +51,7 @@
 
 <!-- Body開始 -->
     <div class=" w-full h-1/2 md:h-screen"> 
-        <div><h1>山本邸</h1></div>
-        <div><h2>基本情報</h2></div>
-        <div><h2>こだわり</h2></div>
-        <div><h2>スケジュール</h2></div>
+
 
         <div id="modal-open">詳しくはこちら</div>        
         <div id="modal-bg"></div>

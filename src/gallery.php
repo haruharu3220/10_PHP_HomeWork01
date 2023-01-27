@@ -60,11 +60,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 $images = aaa();
-echo ("<pre>");
-// var_dump($image);
-var_dump($images[0]['filename']);
 
-echo ("</pre>");
 // $targetDirectory = dirname(__FILE__,2).'/images';
 // var_dump($targetDirectory);
 // $fileName = basename($_FILES["file"]["name"]);

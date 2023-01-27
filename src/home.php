@@ -40,7 +40,8 @@ $interval_format = $interval->format('%a日');
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navibar.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/body.css">
     <script src="https://kit.fontawesome.com/092628cd4c.js" crossorigin="anonymous"></script>
 </head>
 
