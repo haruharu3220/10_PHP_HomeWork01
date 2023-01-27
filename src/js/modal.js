@@ -38,7 +38,7 @@
 
 
     $('.logout').on('click', function() {
-        alert("ログアウトしますか");
+        alert("ログアウトしますか!!");
       });
 
 }

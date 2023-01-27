@@ -40,6 +40,7 @@ $interval_format = $interval->format('%a日');
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navibar.css">
     <script src="https://kit.fontawesome.com/092628cd4c.js" crossorigin="anonymous"></script>
 </head>
 
@@ -55,7 +56,7 @@ $interval_format = $interval->format('%a日');
                 <div class="flex">
                     <h1>HouseHouse</h1>
                 </div>
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
+                <a class="gohome hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
                     <i class="fa-solid fa-house "></i>
                     <span class="gohome mx-4 text-lg font-normal">
                         Home
@@ -64,7 +65,7 @@ $interval_format = $interval->format('%a日');
                     </span>
                 </a>
 
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
+                <a class="goschedul hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
                     <i class="fa-solid fa-table-list"></i>
                     <span class="mx-4 text-lg font-normal">
                         Schedule
@@ -73,7 +74,7 @@ $interval_format = $interval->format('%a日');
                     </span>
                 </a>
 
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
+                <a class="gokanban hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
                     <i class="fa-solid fa-table-list"></i>
                     <span class="mx-4 text-lg font-normal">
                         Kanban
@@ -82,7 +83,7 @@ $interval_format = $interval->format('%a日');
                     </span>
                 </a>
 
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
+                <a class="gogallery hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
                     <i class="fa-regular fa-images"></i>
                     <span class="mx-4 text-lg font-normal">
                         Gallery
