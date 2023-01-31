@@ -52,6 +52,8 @@ ER図（実体関連図）とは？<br>
 https://www.lucidchart.com/pages/ja/er-diagram<br>
 複合主キーの２番目のキーにAUTO_INCREMENTはできない<br>
 https://teratail.com/questions/21493<br>
+【MySQL】データ型一覧<br>
+https://ysklog.net/mysql/1797.html<br>
 
 ### SQL
 INSERT文（SQLを基本から学ぶシリーズ）<br>

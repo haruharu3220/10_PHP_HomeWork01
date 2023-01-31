@@ -6,7 +6,7 @@ $('#modal-open').on('click', function() {
 
   $('#modal-close').on('click', function() {
     $('#modal-container').removeClass('active'); 
-    $('#modal-bg').removeClass('active'); 
+    $('#modal-bg').removeClass('active'); xxxxxaaaazzzaaaaaaaaaaaaaazz
   });
 
 
