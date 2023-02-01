@@ -161,57 +161,7 @@ $interval_format = $interval->format('%a日');
 </div>
 <!-- ナビバー　終了 -->
 
-<!-- サイドバー開始 -->
-<div class="relative dark:bg-gray-800 flex flex-row bg-green-200">
-    <div class="flex flex-col sm:flex-row sm:justify-around">
-        <div class="h-screen w-72">
-            <nav class="mt-10 px-6 ">
 
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg "
-                    href="home.php">
-                    <i class="fa-solid fa-house "></i>
-                    <span class="mx-4 text-lg font-normal">
-                        Home
-                    </span>
-                    <span class="flex-grow text-right">
-                    </span>
-                </a>
-
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg "
-                    href="schedule.php">
-                    <i class="fa-solid fa-table-list"></i>
-                    <span class="mx-4 text-lg font-normal">
-                        Schedule
-                    </span>
-                    <span class="flex-grow text-right">
-                    </span>
-                </a>
-
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg "
-                    href="kanban.php">
-                    <i class="fa-solid fa-table-list"></i>
-                    <span class="mx-4 text-lg font-normal">
-                        Kanban
-                    </span>
-                    <span class="flex-grow text-right">
-                    </span>
-                </a>
-
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg "
-                    href="gallery.php">
-                    <i class="fa-regular fa-images"></i>
-                    <span class="mx-4 text-lg font-normal">
-                        Gallery
-                    </span>
-                    <span class="flex-grow text-right">
-                    </span>
-                </a>
-
-
-            </nav>
-        </div>
-    </div>
-    <!-- サイドバー終了 -->
 
     <!-- Body開始 -->
     <div class="main w-full">
