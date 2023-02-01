@@ -94,7 +94,7 @@ $images = aaa();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-
+    <link rel="stylesheet" href="css/box.css">
     <script src="https://kit.fontawesome.com/092628cd4c.js" crossorigin="anonymous"></script>
 
 </head>
@@ -218,58 +218,6 @@ $images = aaa();
 
 
 
-
-
-
-
-<!-- サイドバー開始 -->
-<div class="relative dark:bg-gray-800 flex flex-row">
-    <div class="flex flex-col sm:flex-row sm:justify-around">
-        <div class="h-screen w-72">
-            <nav class="mt-10 px-6 ">
-
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
-                    <i class="fa-solid fa-house "></i>
-                    <span class="mx-4 text-lg font-normal">
-                        Home
-                    </span>
-                    <span class="flex-grow text-right">
-                    </span>
-                </a>
-
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
-                    <i class="fa-solid fa-table-list"></i>
-                    <span class="mx-4 text-lg font-normal">
-                        Schedule
-                    </span>
-                    <span class="flex-grow text-right">
-                    </span>
-                </a>
-
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
-                    <i class="fa-solid fa-table-list"></i>
-                    <span class="mx-4 text-lg font-normal">
-                        Kanban
-                    </span>
-                    <span class="flex-grow text-right">
-                    </span>
-                </a>
-
-                <a class="hover:text-gray-800 hover:bg-gray-100 flex items-center p-2 my-6 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200  text-gray-600 dark:text-gray-400 rounded-lg " href="#">
-                    <i class="fa-regular fa-images"></i>
-                    <span class="mx-4 text-lg font-normal">
-                        Gallery
-                    </span>
-                    <span class="flex-grow text-right">
-                    </span>
-                </a>
-                <div id="modal-open">画像追加</div>
-
-            </nav>
-        </div>
-    </div>
-    <!-- サイドバー終了 -->
-
     <!-- Dropdown menu -->
     <div id="dropdownSearch" class="  bg-white rounded shadow w-60 dark:bg-gray-700">
         <div class="p-3">
@@ -392,10 +340,12 @@ $images = aaa();
 </div>
 
 <?php foreach ($images as $image) { ?>
-<a href="gallery.php"><img src="../images/<?php echo $image['filename'];?>" alt="投稿画像"></a>
+    <div class="box">
+        <a href="gallery.php"><img src="../images/<?php echo $image['filename'];?>" alt="投稿画像"></a>
+    </div>
 <?php };?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="js/modal.js"></script>
-
+<script src="js/box.js"></script>
 </html>
