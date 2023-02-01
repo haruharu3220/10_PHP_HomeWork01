@@ -10,7 +10,7 @@ $filename = basename($file['name']);
 $tmp_path = $file['tmp_name'];
 $file_err = $file['error'];
 $filesize = $file['size'];
-$upload_dir = dirname(__FILE__,2 ). '/img/';
+$upload_dir = dirname(__FILE__,2 ). '/images/';
 // $display_dir = 'images/';
 
 // var_dump(dirname(__FILE__,3 ));
