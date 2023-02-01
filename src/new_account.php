@@ -115,6 +115,10 @@ $images = aaa();
                     username: <input type="text" name="username">
                 </div>
                 <div>
+                    <input type="radio" name="sex" value="male">男性
+                    <input type="radio" name="sex" value="female">女性
+                </div>
+                <div>
                     e-mail: <input type="text" name="email">
                 </div>
                 <div>

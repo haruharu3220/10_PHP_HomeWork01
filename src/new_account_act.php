@@ -1,23 +1,26 @@
 <?php
 include('functions.php');
+$pdo = connect_to_db();
 
 if (
   !isset($_POST['username']) || $_POST['username'] === '' ||
-  !isset($_POST['username']) || $_POST['username'] === ''
+  !isset($_POST['email']) || $_POST['email'] === '' ||
+  !isset($_POST['password']) || $_POST['password'] === ''
 ) {
   echo json_encode(["error_msg" => "no input"]);
   exit();
 }
 
 $username = $_POST["username"];
+$email = $_POST["email"];
+$sex = $_POST["sex"];
 $password = $_POST["password"];
 
-$pdo = connect_to_db();
 
-$sql = 'SELECT COUNT(*) FROM users_table WHERE username=:username';
 
+$sql = 'SELECT COUNT(*) FROM members WHERE email=:email';
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':username', $username, PDO::PARAM_STR);
+$stmt->bindValue(':email', $email, PDO::PARAM_STR);
 
 try {
   $status = $stmt->execute();
@@ -26,16 +29,21 @@ try {
   exit();
 }
 
+
 if ($stmt->fetchColumn() > 0) {
   echo "<p>すでに登録されているユーザです．</p>";
-  echo '<a href="todo_login.php">login</a>';
+  echo '<a href="new_account.php">login</a>';
   exit();
 }
 
-$sql = 'INSERT INTO users_table(id, username, password, is_admin, created_at, updated_at, deleted_at) VALUES(NULL, :username, :password, 0, now(), now(), NULL)';
+
+$sql = 'INSERT INTO members(id, house_id, name, email, sex, password,created_at, updated_at, deleted_at) 
+                    VALUES(NULL, 0,:username, :email,:sex, :password, now(), now(), NULL)';
 
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+$stmt->bindValue(':email', $email, PDO::PARAM_STR);
+$stmt->bindValue(':sex', $sex, PDO::PARAM_STR);
 $stmt->bindValue(':password', $password, PDO::PARAM_STR);
 
 try {
@@ -45,5 +53,5 @@ try {
   exit();
 }
 
-header("Location:todo_login.php");
+header("Location:index.php");
 exit();
