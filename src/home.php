@@ -4,21 +4,21 @@ include("functions.php");
 check_session_id(); //自作の関数(session_idが合っているか確認)
 
 $pdo = connect_to_db();
-
-//menmersテーブルとhousesテーブルのJOIN
-// $sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name ON members.house_id = houses_name.id2 WHERE id=1;";
-// $stmt = $pdo->prepare($sql);
-
-// try {
-//   $status = $stmt->execute();
-// } catch (PDOException $e) {
-//   echo json_encode(["sql error" => "{$e->getMessage()}"]);
-//   exit();
-// }
-
-// $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
 $result = getHouseInfo();
+echo "<pre>";
+var_dump($result[0]);
+
+echo "</pre>";
+
+$id = $result[0]["id"];
+$name =$result[0]["name"];
+$_SESSION['name'] =$name;
+$session_name =$_SESSION['name'];
+var_dump($name);
+var_dump($session_name);
+
+
+
 
 $scheduled_day = new DateTime($result[0]["scheduled_completion_date"] );
 $scheduled_day_format = $scheduled_day->format('Y年m月d日');
@@ -179,9 +179,11 @@ $interval_format = $interval->format('%a日');
         <a href="logout.php">logout</a>
         
      
-        <form action="home.php" method="POST">
+        <form action="test.php" method="POST">
             <div class="facilities">
-                <input type="hidden"><div class="facility facility01" >テスト4</div>
+                <div class="facility facility01" >password
+                    <a href='test.php?id=<?=$session_name?>'>テスト4</a>
+                </div>
                 <div class="facility facility02">テスト２</div>
                 <div class="facility facility03">テスト３</div>
             </div>
