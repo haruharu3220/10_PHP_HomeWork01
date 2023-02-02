@@ -5,17 +5,16 @@ check_session_id(); //自作の関数(session_idが合っているか確認)
 
 $pdo = connect_to_db();
 $result = getHouseInfo();
-echo "<pre>";
-var_dump($result[0]);
-
-echo "</pre>";
+// echo "<pre>";
+// var_dump($result[0]);
+// echo "</pre>";
 
 $id = $result[0]["id"];
 $name =$result[0]["name"];
-$_SESSION['name'] =$name;
-$session_name =$_SESSION['name'];
+// $_SESSION['name'] =$name;
+// $session_name =$_SESSION['name'];
 var_dump($name);
-var_dump($session_name);
+// var_dump($session_name);
 
 
 
@@ -181,9 +180,9 @@ $interval_format = $interval->format('%a日');
      
         <form action="test.php" method="POST">
             <div class="facilities">
-                <div class="facility facility01" >password
-                    <a href='test.php?id=<?=$session_name?>'>テスト4</a>
-                </div>
+      
+                    <a class="facility facility01" href='test.php?id=<?=$id?>&name=<?=$name?>'>テスト4</a>
+
                 <div class="facility facility02">テスト２</div>
                 <div class="facility facility03">テスト３</div>
             </div>
