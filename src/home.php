@@ -4,6 +4,56 @@ include("functions.php");
 check_session_id(); //自作の関数(session_idが合っているか確認)
 
 $pdo = connect_to_db();
+
+
+if (isset($_GET['name_id']) ) {
+
+    $name_id = $_GET['name_id'];
+    $facility_id = $_GET['facility_id'];
+    echo "<pre>";
+    var_dump($name_id);
+    var_dump($facility_id);
+    echo "</pre>";
+    
+    $sql = 'SELECT COUNT(*) FROM members_facilities WHERE name_id=:name_id AND facility_id=:facility_id';
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
+    $stmt->bindValue(':facility_id', $facility_id, PDO::PARAM_STR);
+    try {
+        $status = $stmt->execute();
+      } catch (PDOException $e) {
+        echo json_encode(["sql error" => "{$e->getMessage()}"]);
+        exit();
+      }
+      
+      $like_count = $stmt->fetchColumn();
+      var_dump($like_count);
+
+      if ($like_count !== 0) {
+        // いいねされている状態
+        $sql = 'DELETE FROM members_facilities WHERE name_id=:name_id AND facility_id=:facility_id';
+      } else {
+        // いいねされていない状態
+        $sql = 'INSERT INTO members_facilities (id, name_id, facility_id, created_at) VALUES (NULL, :name_id, :facility_id, now())';
+      }
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
+        $stmt->bindValue(':facility_id', $facility_id, PDO::PARAM_STR);
+
+        try {
+        $status = $stmt->execute();
+        } catch (PDOException $e) {
+        echo json_encode(["sql error" => "{$e->getMessage()}"]);
+        exit();
+        }
+
+
+}
+
+
+
+
+
 $result = getHouseInfo();
 // echo "<pre>";
 // var_dump($result[0]);
@@ -55,7 +105,7 @@ $count =0;
 foreach ($facilities_result as $facility) {
   $count++;
   $facilities .= "
-  <a class='facility facility{$count}' href='test.php?id={$id}'>{$facility["category_name"]}</a>
+  <a class='facility facility{$count}' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>{$facility["category_name"]}</a>
   ";
     if ($count % 4 == 0)
         $facilities .= "<br>"; 
