@@ -30,7 +30,8 @@ function check_session_id()
 function getHouseInfo(){
   $pdo = connect_to_db();
   //menmersテーブルとhousesテーブルのJOIN
-  $sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name ON members.house_id = houses_name.id2 WHERE id=1;";
+  $sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name 
+          ON members.house_id = houses_name.id2 WHERE id=1;";
   $stmt = $pdo->prepare($sql);
   
   try {
@@ -59,7 +60,9 @@ function fileSave($filename, $save_path, $caption)
 
   $pdo = connect_to_db();
   $result = getHouseInfo();
-
+  echo "<pre>";
+  var_dump($result);
+  echo "</pre>";
   $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
             VALUE(:house_id, :image_id, :filename, :file_path, :category_id, now(), now(), NULL)";
 
@@ -81,13 +84,11 @@ function fileSave($filename, $save_path, $caption)
   }
 }
 
-  function aaa(){
+  function getImagesInfo(){
 
     $pdo =connect_to_db();
-
     $sql = "SELECT * FROM images ORDER BY updated_at DESC";
     
-
     try{
         $stmt = $pdo->prepare($sql);
         $result = $stmt->execute();
@@ -98,6 +99,5 @@ function fileSave($filename, $save_path, $caption)
     }
     $images_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    
     return $images_info;
   }

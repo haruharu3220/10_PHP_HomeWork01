@@ -41,12 +41,19 @@ if (isset($_FILES) && !empty($_FILES)) {
         echo '<br>';
     }
 
+
+
+
+
+
+
+
+    
 }
 
-
-
 //menmersテーブルとhousesテーブルのJOIN
-$sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name ON members.house_id = houses_name.id2 WHERE id=1;";
+$sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name 
+ON members.house_id = houses_name.id2 WHERE id=1;";
 $stmt = $pdo->prepare($sql);
 
 try {
@@ -59,28 +66,8 @@ try {
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-$images = aaa();
+$images = getImagesInfo();
 
-// $targetDirectory = dirname(__FILE__,2).'/images';
-// var_dump($targetDirectory);
-// $fileName = basename($_FILES["file"]["name"]);
-// var_dump($fileName);
-// $targetFilePath = $targetDirectory . $fileName;
-// var_dump($targetFilePath);
-// $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-
-// if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($fileName)){
-//     $arrImageTypes = array('jpg', 'jpeg', 'gif', 'pdf', 'png');
-//     if(in_array($fileType, $arrImageTypes)){
-//         $postImageForServer = move_uploaded_file($_FILE["file"]["tmp_name"],$targetFilePath);
-
-//         if($postImageForServer){
-//             $sql = "INSERT INTO images(house_id,image_id,filename,filepath,category_id,created_at,updated_at,deleted_at) 
-//                     VALUE(:house_id, :image_id, :filename, :file_path, :category, now(), now(), NULL)";
-
-//         }
-//     }
-// }
 
 ?>
 <!DOCTYPE html>
@@ -309,8 +296,6 @@ $images = aaa();
 
     </div>
     <!-- Body終了 -->
-
-
 </div>
 
 
