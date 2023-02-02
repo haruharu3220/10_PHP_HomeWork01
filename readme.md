@@ -122,12 +122,12 @@ https://www.jsdelivr.com/<br>
 
 
 
+https://wordpress.zenmai.org/2020/10/12/caibamcuamyphpadminkhohieu/
 
 
 
 
-
-詰んだ事例集<br>
+## 詰んだ事例集<br>
 
 
 --------<br>
@@ -178,7 +178,22 @@ https://mai.kosodante.com/usetailwindcsswithjavascript/<br>
 --------
 
 
---------
+--------<br>
+【詰んだこと】<br>
+PHPMyAdminでテーブルを隠すボタンをクリックしてしまい、テーブルが見えなくなった<br>
+【解決策】<br>
+一度、ブラウザを消して表示ボタンをクリックした。<br>
+
+【結論】<br>
+解決<br>
+
+【参考にしたサイト等】<br>
+https://wordpress.zenmai.org/2020/10/12/caibamcuamyphpadminkhohieu/<br>
+
+--------<br>
+
+
+--------<br>
 【詰んだこと】<br>
 チェックボックスのクリック後の色を青から別の色に変えたい<br>
 【解決策】<br>
@@ -190,7 +205,8 @@ https://mai.kosodante.com/usetailwindcsswithjavascript/<br>
 【参考にしたサイト等】<br>
 
 
---------
+--------<br>
+
 
 後で見る<br>
 かけだしSEのためのデータベース設計入門<br>

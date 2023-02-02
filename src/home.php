@@ -13,7 +13,7 @@ $id = $result[0]["id"];
 $name =$result[0]["name"];
 // $_SESSION['name'] =$name;
 // $session_name =$_SESSION['name'];
-var_dump($name);
+// var_dump($name);
 // var_dump($session_name);
 
 
@@ -27,6 +27,43 @@ $today = new DateTime('now');
 $interval = $scheduled_day->diff($today);
 $interval_format = $interval->format('%a日');
 
+
+
+
+$sql = 'SELECT * FROM facilities';
+$stmt = $pdo->prepare($sql);
+
+try {
+    $status = $stmt->execute();
+} catch (PDOException $e) {
+    echo json_encode(["sql error" => "{$e->getMessage()}"]);
+    exit();
+}
+
+$facilities_result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// var_dump($facilities_result);
+
+$facilities = "<div class='facilities'>";
+// var_dump($facilities);
+
+
+// $test = "これはテストです";
+// var_dump($test);
+
+
+$count =0;
+foreach ($facilities_result as $facility) {
+  $count++;
+  $facilities .= "
+  <a class='facility facility{$count}' href='test.php?id={$id}'>{$facility["category_name"]}</a>
+  ";
+    if ($count % 4 == 0)
+        $facilities .= "<br>"; 
+}
+$facilities .= "</div>";
+// var_dump($count);
+
+// var_dump($facilities);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -176,19 +213,22 @@ $interval_format = $interval->format('%a日');
             <h2>完成まで、あと<?=$interval_format?></h2> 
         </div>
         <a href="logout.php">logout</a>
-        
-     
-        <form action="test.php" method="POST">
+        <br>
+
+    <input type="checkbox" >お気に入りのみ
+
+        <!-- <form action="test.php" method="POST">
             <div class="facilities">
       
-                    <a class="facility facility01" href='test.php?id=<?=$id?>&name=<?=$name?>'>テスト4</a>
+                    <a class="facility facility01" href='test.php?id=<?=$id?>'>テスト4</a>
 
                 <div class="facility facility02">テスト２</div>
                 <div class="facility facility03">テスト３</div>
             </div>
     
-        </form>
+        </form> -->
             
+        <?=$facilities?>
     </div>
     <!-- Body終了 -->
 
