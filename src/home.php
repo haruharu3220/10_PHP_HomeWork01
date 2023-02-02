@@ -41,6 +41,7 @@ $interval_format = $interval->format('%a日');
     <link href="../dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/facilities.css">
     <link rel="stylesheet" href="css/body.css">
     <script src="https://kit.fontawesome.com/092628cd4c.js" crossorigin="anonymous"></script>
 </head>
@@ -175,9 +176,18 @@ $interval_format = $interval->format('%a日');
             <h2>完成予定日：<?=$scheduled_day_format?></h2>
             <h2>完成まで、あと<?=$interval_format?></h2> 
         </div>
-
         <a href="logout.php">logout</a>
-
+        
+     
+        <form action="home.php" method="POST">
+            <div class="facilities">
+                <input type="hidden"><div class="facility facility01" >テスト4</div>
+                <div class="facility facility02">テスト２</div>
+                <div class="facility facility03">テスト３</div>
+            </div>
+    
+        </form>
+            
     </div>
     <!-- Body終了 -->
 
@@ -186,6 +196,7 @@ $interval_format = $interval->format('%a日');
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/facilities.js"></script>
 <script src="js/navibar.js"></script>
 
 </html>
