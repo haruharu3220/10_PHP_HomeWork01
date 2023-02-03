@@ -10,10 +10,10 @@ if (isset($_GET['name_id'])) {
 
     $name_id = $_GET['name_id'];
     $facility_id = $_GET['facility_id'];
-    echo "<pre>";
-    var_dump($name_id);
-    var_dump($facility_id);
-    echo "</pre>";
+    // echo "<pre>";
+    // var_dump($name_id);
+    // var_dump($facility_id);
+    // echo "</pre>";
 
     //いいねを押す
     $sql = 'SELECT COUNT(*) FROM members_facilities WHERE name_id=:name_id AND facility_id=:facility_id';
@@ -28,7 +28,7 @@ if (isset($_GET['name_id'])) {
     }
 
     $like_count = $stmt->fetchColumn();
-    var_dump($like_count);
+    // var_dump($like_count);
 
     if ($like_count !== 0) {
         // いいねされている状態
@@ -61,9 +61,9 @@ try {
 }
 
 $likes_count2 = $stmt->fetchAll();
-echo "<pre>";
-var_dump($likes_count2[2]);
-echo "</pre>";
+// echo "<pre>";
+// var_dump($likes_count2[2]);
+// echo "</pre>";
 $likes_number = array();;
 foreach ($likes_count2 as $like) {
     array_push($likes_number, $like["facility_id"]);
