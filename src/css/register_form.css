@@ -1,0 +1,42 @@
+.register_form{
+    
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 700px;
+    width: 500px;
+    /* background-color: red; */
+    border: 1px solid black; 
+
+}
+.form_header{
+    font-size: large;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_content{
+    height: 560px;
+}
+
+.username,
+.e-mail,
+.password{
+
+    margin: 10px;
+    border: 2px solid black;  /* 枠線 */
+    border-radius: 0.67em;   /* 角丸 */
+    padding: 0.5em;          /* 内側の余白量 */
+    background-color: snow;  /* 背景色 */
+    width: 20em;             /* 横幅 */
+    font-size: 1em;          /* 文字サイズ */
+}
+.form_footer{
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
