@@ -19,15 +19,21 @@
 }
 
 .like{
-    background: #eff95d;
+    /* background: #eff95d;
     border-radius: 10%;
-    box-shadow: inset 8.71px 8.71px 18px #D2DB52, inset -8.71px -8.71px 18px #FFFF68;
+    box-shadow: inset 8.71px 8.71px 18px #D2DB52, inset -8.71px -8.71px 18px #FFFF68; */
+
+    border-radius: 33px;
+background: #52f46d;
+box-shadow:  5px 5px 10px #3eb953,
+             -5px -5px 10px #66ff87;
 }
 
 .none{
-    background: #D2DBEE;
-    border-radius: 10%;
-    box-shadow: inset 8.71px 8.71px 18px #B9C1D1, inset -8.71px -8.71px 18px #EBF5FF;
+    border-radius: 33px;
+    background: #e6e6e6;
+    box-shadow:  5px 5px 10px #afafaf,
+                 -5px -5px 10px #ffffff;
 }
 
 .fac_title{
