@@ -131,11 +131,33 @@ foreach ($facilities_result as $facility) {
     
     if($like_facility === true){   
         $facilities .= "
-        <a class='facility facility{$count} like' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>{$facility["category_name"]}</a>
+
+        <a class='facility facility{$count} like' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>
+        <div class='fac_title'>
+            <p class='fac_title_text'>{$facility["category_name"]}</p>
+        </div>
+        <div class='fac_picture'>
+            <img src='https://placehold.jp/150x150.png'>            
+        </div>
+        <div class='fac_intro'>
+        
+        </div>
+
+
+        </a>
         ";
     }else{
         $facilities .= "
-        <a class='facility facility{$count}' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>{$facility["category_name"]}</a>
+        <a class='facility facility{$count} none' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>
+        <div class='fac_title'>
+            <p class='fac_title_text'>{$facility["category_name"]}</p>
+        </div>
+        <div class='fac_picture'>
+            <img src='https://placehold.jp/150x150.png'>            
+        </div>
+            <div class='fac_intro'>
+        </div>
+        </a>
       ";
     }
 

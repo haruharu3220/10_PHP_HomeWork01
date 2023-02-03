@@ -10,15 +10,38 @@
     height: 300px;
     /* background-color: red; */
     margin: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     
 } 
 
 .facility.active{
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
 }
 
 .like{
-    border: 1px solid red;
-    
+    background: #eff95d;
+    border-radius: 10%;
+    box-shadow: inset 8.71px 8.71px 18px #D2DB52, inset -8.71px -8.71px 18px #FFFF68;
+}
+
+.none{
+    background: #D2DBEE;
+    border-radius: 10%;
+    box-shadow: inset 8.71px 8.71px 18px #B9C1D1, inset -8.71px -8.71px 18px #EBF5FF;
+}
+
+.fac_title{
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fac_title_text{
+    /* text-align: center; */
+}
+.fac_picture{
+    width:150px;
+    margin:0 auto;
 }
