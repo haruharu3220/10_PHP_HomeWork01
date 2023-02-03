@@ -31,18 +31,19 @@ function getHouseInfo(){
   $pdo = connect_to_db();
   //menmersテーブルとhousesテーブルのJOIN
   $sql = "SELECT * FROM members LEFT OUTER JOIN( SELECT id AS id2,house_name,scheduled_completion_date FROM houses)AS houses_name 
-          ON members.house_id = houses_name.id2 WHERE id=1;";
+          ON members.house_id = houses_name.id2 WHERE id=:name_id";
   $stmt = $pdo->prepare($sql);
-  
+  $stmt->bindValue(':name_id', $_SESSION["member_id"] , PDO::PARAM_STR);
+
   try {
     $status = $stmt->execute();
   } catch (PDOException $e) {
     echo json_encode(["sql error" => "{$e->getMessage()}"]);
     exit();
   }
-  
   $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   // echo ("<pre>");
+  // var_dump($_SESSION["session_id"]);
   // var_dump($result);
   // echo ("</pre>");
   return $result;

@@ -2,23 +2,16 @@
 session_start();
 include("functions.php");
 check_session_id(); //自作の関数(session_idが合っているか確認)
-
 $pdo = connect_to_db();
 
 
-if (isset($_GET['name_id'])) {
-
-    $name_id = $_GET['name_id'];
+if (isset($_GET['facility_id'])) {
     $facility_id = $_GET['facility_id'];
-    // echo "<pre>";
-    // var_dump($name_id);
-    // var_dump($facility_id);
-    // echo "</pre>";
 
     //いいねを押す
     $sql = 'SELECT COUNT(*) FROM members_facilities WHERE name_id=:name_id AND facility_id=:facility_id';
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
+    $stmt->bindValue(':name_id', $_SESSION["member_id"] , PDO::PARAM_STR);
     $stmt->bindValue(':facility_id', $facility_id, PDO::PARAM_STR);
     try {
         $status = $stmt->execute();
@@ -38,7 +31,7 @@ if (isset($_GET['name_id'])) {
         $sql = 'INSERT INTO members_facilities (id, name_id, facility_id, created_at) VALUES (NULL, :name_id, :facility_id, now())';
     }
     $stmt = $pdo->prepare($sql);
-    $stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
+    $stmt->bindValue(':name_id', $_SESSION["member_id"], PDO::PARAM_STR);
     $stmt->bindValue(':facility_id', $facility_id, PDO::PARAM_STR);
 
     try {
@@ -52,7 +45,7 @@ if (isset($_GET['name_id'])) {
 //いいねされている設備を抽出する
 $sql = 'SELECT facility_id FROM members_facilities WHERE name_id=:name_id';
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
+$stmt->bindValue(':name_id', $_SESSION["member_id"], PDO::PARAM_STR);
 try {
     $status = $stmt->execute();
 } catch (PDOException $e) {
@@ -70,16 +63,12 @@ foreach ($likes_count2 as $like) {
     //var_dump($likes_number);
 }
 
-
 $result = getHouseInfo();
-// echo "<pre>";
-// var_dump($result[0]);
-// echo "</pre>";
-
 $id = $result[0]["id"];
 $name = $result[0]["name"];
 // $_SESSION['name'] =$name;
 // $session_name =$_SESSION['name'];
+// var_dump($id);
 // var_dump($name);
 // var_dump($session_name);
 
@@ -132,7 +121,7 @@ foreach ($facilities_result as $facility) {
     if($like_facility === true){   
         $facilities .= "
 
-        <a class='facility facility{$count} like' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>
+        <a class='facility facility{$count} like' href='home.php?facility_id={$facility["id"]}'>
         <div class='fac_title'>
             <p class='fac_title_text'>{$facility["category_name"]}</p>
         </div>
@@ -148,7 +137,7 @@ foreach ($facilities_result as $facility) {
         ";
     }else{
         $facilities .= "
-        <a class='facility facility{$count} none' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>
+        <a class='facility facility{$count} none' href='home.php?facility_id={$facility["id"]}'>
         <div class='fac_title'>
             <p class='fac_title_text'>{$facility["category_name"]}</p>
         </div>
