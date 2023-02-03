@@ -1,16 +1,24 @@
+
 .facilities{
-    display: flex;
+    display:flex;
+    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
 }
 
 .facility{
-    width: 300px;
+    width: calc(100% / 4);
     height: 300px;
     /* background-color: red; */
     margin: 10px;
     border: 1px solid black;
-}
+    
+} 
 
 .facility.active{
     border: 2px solid orange;
 }
 
+.like{
+    border: 1px solid red;
+    
+}

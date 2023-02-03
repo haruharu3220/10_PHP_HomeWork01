@@ -6,7 +6,7 @@ check_session_id(); //自作の関数(session_idが合っているか確認)
 $pdo = connect_to_db();
 
 
-if (isset($_GET['name_id']) ) {
+if (isset($_GET['name_id'])) {
 
     $name_id = $_GET['name_id'];
     $facility_id = $_GET['facility_id'];
@@ -14,44 +14,61 @@ if (isset($_GET['name_id']) ) {
     var_dump($name_id);
     var_dump($facility_id);
     echo "</pre>";
-    
+
+    //いいねを押す
     $sql = 'SELECT COUNT(*) FROM members_facilities WHERE name_id=:name_id AND facility_id=:facility_id';
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
     $stmt->bindValue(':facility_id', $facility_id, PDO::PARAM_STR);
     try {
         $status = $stmt->execute();
-      } catch (PDOException $e) {
+    } catch (PDOException $e) {
         echo json_encode(["sql error" => "{$e->getMessage()}"]);
         exit();
-      }
-      
-      $like_count = $stmt->fetchColumn();
-      var_dump($like_count);
+    }
 
-      if ($like_count !== 0) {
+    $like_count = $stmt->fetchColumn();
+    var_dump($like_count);
+
+    if ($like_count !== 0) {
         // いいねされている状態
         $sql = 'DELETE FROM members_facilities WHERE name_id=:name_id AND facility_id=:facility_id';
-      } else {
+    } else {
         // いいねされていない状態
         $sql = 'INSERT INTO members_facilities (id, name_id, facility_id, created_at) VALUES (NULL, :name_id, :facility_id, now())';
-      }
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
-        $stmt->bindValue(':facility_id', $facility_id, PDO::PARAM_STR);
+    }
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
+    $stmt->bindValue(':facility_id', $facility_id, PDO::PARAM_STR);
 
-        try {
+    try {
         $status = $stmt->execute();
-        } catch (PDOException $e) {
+    } catch (PDOException $e) {
         echo json_encode(["sql error" => "{$e->getMessage()}"]);
         exit();
-        }
-
-
+    }
 }
 
+//いいねされている設備を抽出する
+$sql = 'SELECT facility_id FROM members_facilities WHERE name_id=:name_id';
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':name_id', $name_id, PDO::PARAM_STR);
+try {
+    $status = $stmt->execute();
+} catch (PDOException $e) {
+    echo json_encode(["sql error" => "{$e->getMessage()}"]);
+    exit();
+}
 
-
+$likes_count2 = $stmt->fetchAll();
+echo "<pre>";
+var_dump($likes_count2[2]);
+echo "</pre>";
+$likes_number = array();;
+foreach ($likes_count2 as $like) {
+    array_push($likes_number, $like["facility_id"]);
+    //var_dump($likes_number);
+}
 
 
 $result = getHouseInfo();
@@ -60,7 +77,7 @@ $result = getHouseInfo();
 // echo "</pre>";
 
 $id = $result[0]["id"];
-$name =$result[0]["name"];
+$name = $result[0]["name"];
 // $_SESSION['name'] =$name;
 // $session_name =$_SESSION['name'];
 // var_dump($name);
@@ -69,7 +86,7 @@ $name =$result[0]["name"];
 
 
 
-$scheduled_day = new DateTime($result[0]["scheduled_completion_date"] );
+$scheduled_day = new DateTime($result[0]["scheduled_completion_date"]);
 $scheduled_day_format = $scheduled_day->format('Y年m月d日');
 
 
@@ -101,14 +118,27 @@ $facilities = "<div class='facilities'>";
 // var_dump($test);
 
 
-$count =0;
+//HTML生成　お気に入りだとclassにlikeを付与。
+$count = 0;
+$like_facility = false;
 foreach ($facilities_result as $facility) {
-  $count++;
-  $facilities .= "
-  <a class='facility facility{$count}' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>{$facility["category_name"]}</a>
-  ";
-    if ($count % 4 == 0)
-        $facilities .= "<br>"; 
+    $count++;
+
+    foreach ($likes_number as $like_num) {
+        $like_facility = $like_num === $count ? true : false; 
+        if($like_facility === true) break;
+    }        
+    
+    if($like_facility === true){   
+        $facilities .= "
+        <a class='facility facility{$count} like' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>{$facility["category_name"]}</a>
+        ";
+    }else{
+        $facilities .= "
+        <a class='facility facility{$count}' href='home.php?name_id={$id}&facility_id={$facility["id"]}'>{$facility["category_name"]}</a>
+      ";
+    }
+
 }
 $facilities .= "</div>";
 // var_dump($count);
@@ -250,37 +280,37 @@ $facilities .= "</div>";
 
 
 
-    <!-- Body開始 -->
-    <div class="main w-full">
-        <div>
-            <h1><?=$result[0]["house_name"]?>邸</h1>
-        </div>
-        <div>
-            <h2>基本情報</h2>
-        </div>
-        <div>
-            <h2>完成予定日：<?=$scheduled_day_format?></h2>
-            <h2>完成まで、あと<?=$interval_format?></h2> 
-        </div>
-        <a href="logout.php">logout</a>
-        <br>
+<!-- Body開始 -->
+<div class="main">
+    <div>
+        <h1><?= $result[0]["house_name"] ?>邸</h1>
+    </div>
+    <div>
+        <h2>基本情報</h2>
+    </div>
+    <div>
+        <h2>完成予定日：<?= $scheduled_day_format ?></h2>
+        <h2>完成まで、あと<?= $interval_format ?></h2>
+    </div>
+    <a href="logout.php">logout</a>
+    <br>
 
-    <input type="checkbox" >お気に入りのみ
+    <input type="checkbox">お気に入りのみ
 
-        <!-- <form action="test.php" method="POST">
+    <!-- <form action="test.php" method="POST">
             <div class="facilities">
       
-                    <a class="facility facility01" href='test.php?id=<?=$id?>'>テスト4</a>
+                    <a class="facility facility01" href='test.php?id=<?= $id ?>'>テスト4</a>
 
                 <div class="facility facility02">テスト２</div>
                 <div class="facility facility03">テスト３</div>
             </div>
     
         </form> -->
-            
-        <?=$facilities?>
-    </div>
-    <!-- Body終了 -->
+
+    <?= $facilities ?>
+</div>
+<!-- Body終了 -->
 
 </div>
 
