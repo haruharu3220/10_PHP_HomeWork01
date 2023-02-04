@@ -49,6 +49,8 @@ function getHouseInfo(){
   return $result;
 }
 
+
+
 /**
  * *
  * @param mixed $filename

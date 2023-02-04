@@ -1,0 +1,23 @@
+.main{
+    width: 100%;
+    display: flex;
+}
+.gallery_mian{
+    /* width: 100%; */
+    width: calc(100% - 240px);
+    /* background-color: aqua; */
+}
+
+
+.gallery_registration{
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 500px;
+    border: 1px solid black; 
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+}

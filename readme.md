@@ -10,7 +10,9 @@ https://gsacademy.jp/column/tky-019/<br>
 詳細の管理はNotionで行う<br>
 https://dirt-thought-f41.notion.site/G-s-ACADEMY-8dfac03bc2e549d0b1b7a5015f9bf9c4<br>
 
-
+### HTML
+HTML 複数ページで共通になる部分はインクルードする<br>
+https://shu-sait.com/html-kyoutuu-bubun-include/<br>
 ### CSS
 本番環境にデプロイしたらTailwind CSSが効かない時に確認すること<br>
 https://de-milestones.com/tailwindcss-not-work-after-deploy/<br>
@@ -38,6 +40,7 @@ https://www.youtube.com/watch?v=6JF0UAX7g-k<br>
 https://www.sejuku.net/blog/21625<br>
 PHP foreach構文 使い方【基本のキ】<br>
 https://tech-blog.rakus.co.jp/entry/20211001/php<br>
+
 
 ### データベース <br>
 データベースオブジェクトの命名規約<br>
